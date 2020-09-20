@@ -17,8 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.Ejercicio2.entity.User;
 import com.example.Ejercicio2.service.UserService;
 
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 @RestController
 @RequestMapping("/Ejercicio2")
+@EnableSwagger2
 public class UserRestController {
 	
 	@Autowired
