@@ -8,6 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.Ejercicio2.entity.User;
 
@@ -38,7 +39,8 @@ public class UserDAOImpl implements UserDAO{
 		return user;
 		
 	}
-
+	
+	@Transactional
 	public void save(User user) {
 		
 		Session currentSession = entityManager.unwrap(Session.class);
@@ -46,7 +48,8 @@ public class UserDAOImpl implements UserDAO{
 		currentSession.saveOrUpdate(user);	
 		
 	}
-
+	
+	@Transactional
 	public void deleteById(int id) {
 		
 		Session currentSession = entityManager.unwrap(Session.class);
